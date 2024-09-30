@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
+import ButtonPrimary from './src/components/ButtonPrimary';
 
 export default function App() {
   return (
@@ -8,9 +9,7 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={styles.containerInput}>
       <TextInput style={styles.input} placeholder='Ingrese una tarea'/>
-      <Pressable style={styles.button}>
-        <Text style={styles.textButton}>'Agregar Tarea'</Text>
-      </Pressable>
+      <ButtonPrimary/>
       </View>
     </View>
   );
@@ -40,16 +39,5 @@ const styles = StyleSheet.create({
     margin:10,
     borderRadius:5
   },
-  button:{
-    padding:20,
-    backgroundColor:'lightblue',
-    flex:1,
-    margin:10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius:5
-  },
-  textButton:{
-    
-  }
+  
 });
