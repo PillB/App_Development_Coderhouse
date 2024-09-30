@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 //import React from 'react'
 
-const ButtonPrimary = () => {
+const ButtonPrimary = (text) => {
   return (
     <Pressable style={styles.button}>
-        <Text style={styles.textButton}>'Agregar Tarea'</Text>
+        <Text style={styles.textButton}>{text}</Text>
     </Pressable>
   )
 }
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
         borderRadius:5
     },
     textButton:{
-
+        color:"#fff"
     }
 })

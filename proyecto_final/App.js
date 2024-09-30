@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import InputPrimary from './src/components/InputPrimary';
 import ButtonPrimary from './src/components/ButtonPrimary';
 
 export default function App() {
@@ -8,8 +9,8 @@ export default function App() {
       <Text style={styles.text}>Proyecto Final!</Text>
       <StatusBar style="auto" />
       <View style={styles.containerInput}>
-      <TextInput style={styles.input} placeholder='Ingrese una tarea'/>
-      <ButtonPrimary/>
+        <InputPrimary/>
+        <ButtonPrimary text="Agregar"/>
       </View>
     </View>
   );
@@ -30,14 +31,5 @@ const styles = StyleSheet.create({
   },
   text:{
     color:"#fff"
-  },
-  input:{
-    borderColor:'lightblue',
-    borderWidth:1,
-    padding:5,
-    flex:2,
-    margin:10,
-    borderRadius:5
-  },
-  
+  }
 });
