@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import InputPrimary from './src/components/InputPrimary';
 import ButtonPrimary from './src/components/ButtonPrimary';
-import {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react';
+import uuid from 'react-native-uuid';
 
 export default function App() {
   
@@ -16,7 +17,7 @@ export default function App() {
 
   const handleAddTask = () => {
     const newTask = {
-      id:"",
+      id:uuid.v4(),
       name:newTaskName
     }
     setTasks([...tasks, newTask])
