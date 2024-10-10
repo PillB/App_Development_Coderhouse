@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 //import React from 'react'
 
-const InputPrimary = () => {
+const InputPrimary = (value, onChangeText) => {
   return (
-    <TextInput style={styles.input} placeholder='Ingrese una tarea'/>
+    <TextInput value={value} onChangeText={onChangeText} style={styles.input} placeholder='Ingrese una tarea'/>
   )
 }
 

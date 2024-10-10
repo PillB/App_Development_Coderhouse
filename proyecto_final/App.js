@@ -2,15 +2,30 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import InputPrimary from './src/components/InputPrimary';
 import ButtonPrimary from './src/components/ButtonPrimary';
+import {useEffect, useState} from 'react'
 
 export default function App() {
+  
+  const [newTask, setNewTask] = useState("")
+
+  const [tasks, setTasks] = useState([])
+  
+  useEffect(() => {
+    console.log(tasks)
+  },[tasks])
+
+  const handleAddTask = () => {
+    setTasks([...tasks, newTask])
+    setNewTask("")
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Proyecto Final!</Text>
       <StatusBar style="auto" />
       <View style={styles.containerInput}>
-        <InputPrimary/>
-        <ButtonPrimary text="Agregar"/>
+        <InputPrimary value={newTask} onChangeText={(e) => setNewTask(e) }/>
+        <ButtonPrimary onPress={handleAddTask} text="Agregar"/>
       </View>
     </View>
   );
