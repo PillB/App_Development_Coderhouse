@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react'
 
 export default function App() {
   
-  const [newTask, setNewTask] = useState("")
+  const [newTaskName, setNewTaskName] = useState("")
 
   const [tasks, setTasks] = useState([])
   
@@ -15,8 +15,12 @@ export default function App() {
   },[tasks])
 
   const handleAddTask = () => {
+    const newTask = {
+      id:"",
+      name:newTaskName
+    }
     setTasks([...tasks, newTask])
-    setNewTask("")
+    setNewTaskName("")
   }
 
   return (
@@ -24,7 +28,7 @@ export default function App() {
       <Text style={styles.text}>Proyecto Final!</Text>
       <StatusBar style="auto" />
       <View style={styles.containerInput}>
-        <InputPrimary value={newTask} onChangeText={(e) => setNewTask(e) }/>
+        <InputPrimary value={newTaskName} onChangeText={(e) => setNewTaskName(e) }/>
         <ButtonPrimary onPress={handleAddTask} text="Agregar"/>
       </View>
     </View>
